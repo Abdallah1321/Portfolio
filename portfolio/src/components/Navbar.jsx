@@ -2,6 +2,7 @@ import { Navbar, Container, Nav } from "react-bootstrap";
 import { useState, useEffect } from "react";
 import logo from "../assets/img/Asset_2.svg";
 import navBtn1 from "../assets/img/nav-icon1.svg";
+import navBtn2 from "../assets/img/nav-icon2.svg";
 export const NavBar = () => {
   const [activeLink, setActive] = useState("home");
   const [scrolled, setScrolled] = useState(false);
@@ -53,19 +54,22 @@ export const NavBar = () => {
               Skills
             </Nav.Link>
             <Nav.Link
-              href="#projects"
+              href="#project"
               className={
-                activeLink === "projects" ? "active navbar-link" : "navbar-link"
+                activeLink === "project" ? "active navbar-link" : "navbar-link"
               }
-              onClick={() => onUpdateActiveLink("projects")}
+              onClick={() => onUpdateActiveLink("project")}
             >
               Projects
             </Nav.Link>
           </Nav>
           <span className="navbar-text">
             <div className="social-icon">
-              <a href="#">
+              <a href="https://www.linkedin.com/in/abdallah-ibrahim37/">
                 <img src={navBtn1} alt="" />
+              </a>
+              <a href="https://github.com/Abdallah1321">
+                <img src={navBtn2} alt="" />
               </a>
             </div>
               <button className="vvd">

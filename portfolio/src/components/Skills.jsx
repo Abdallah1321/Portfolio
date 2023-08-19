@@ -5,7 +5,7 @@ import { CartDash } from "react-bootstrap-icons";
 import meter1 from "../assets/img/meter1.svg";
 import meter2 from "../assets/img/meter2.svg";
 import meter3 from "../assets/img/meter3.svg";
-import colorSharp from '../assets/img/color-sharp.png'
+import colorSharp from "../assets/img/color-sharp.png";
 
 export const Skills = () => {
   const responsive = {
@@ -35,7 +35,20 @@ export const Skills = () => {
             <div className="skill-bx">
               <h2>Skills</h2>
               <p>
-                Here are some of the skills that I have! I am always willing to take the time to learn more skills to enhance myself and become a better developer. These skills are
+                Welcome to my skills showcase, a testament to my journey of
+                continuous growth in technology. Proficient in front-end
+                development with ReactJS, CSS, and HTML, I craft engaging user
+                experiences that seamlessly adapt across platforms. On the
+                back-end, I leverage NodeJS, ExpressJS, and MongoDB to architect
+                robust server systems. My database experience includes MongoDB as
+                previously mentioned, but also MySQL, SQLite, and FireBase,
+                enabling scalable and secure data solutions. Agile methodologies
+                and strong software testing underpin my approach, supported by
+                effective use of UML diagrams and Git. Beyond technical prowess,
+                my communication, teamwork, leadership, and problem-solving
+                skills drive productive collaborations. Let's embark on a
+                journey together, where innovation and adaptability fuel the
+                creation of exceptional digital solutions.
               </p>
               <Carousel
                 responsive={responsive}
@@ -43,39 +56,46 @@ export const Skills = () => {
                 className="skill-sider"
               >
                 <div className="item">
-                  <img src={meter1} />
-                  <h5>Web Development</h5>
+                  <h2 className="title">Front-End Skills</h2>
+                  <h5>
+                    ReactJS, CSS, HTML, SCSS, Bootstrap, Tailwind CSS,
+                    Responsive Design, JavaScript
+                  </h5>
                 </div>
                 <div className="item">
-                  <img src={meter1} />
-                  <h5>RESTful APIs</h5>
+                  <h2 className="title">Back-End Skills</h2>
+                  <h5>
+                    NodeJS, ExpressJS, Flask, Java, C++, Data Structures and
+                    Algorithms, OOP, RESTful APIs
+                  </h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} />
-                  <h5>Object Oriented Programming</h5>
+                  <h2 className="title">Database Skills</h2>
+                  <h5>
+                    MySQL, SQLite, MongoDB, FireBase, Big Data, Complex Queries,
+                    Data Modeling
+                  </h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} />
-                  <h5>Databases</h5>
+                  <h2 className="title">Method Skills</h2>
+                  <h5>
+                    Waterfall Model, Agile Development, Software Development,
+                    Sprint Planning, UML Diagrams and Modeling, Software
+                    Testing, Git
+                  </h5>
                 </div>
                 <div className="item">
-                  <img src={meter3} />
-                  <h5>Advanced Algorithms and Data Structures</h5>
-                </div>
-                <div className="item">
-                  <img src={meter2} />
-                  <h5>UML</h5>
-                </div>
-                <div className="item">
-                  <img src={meter1} />
-                  <h5>Teamwork and Communication</h5>
+                  <h2 className="title">Soft Skills</h2>
+                  <h5>
+                    English Communication, Arabic Communication, Teamwork and
+                    Leadership, Time Management, Problem Solving
+                  </h5>
                 </div>
               </Carousel>
             </div>
           </Col>
         </Row>
       </Container>
-      
     </section>
   );
 };
