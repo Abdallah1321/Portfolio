@@ -1,6 +1,9 @@
 import { useState, useEffect } from "react";
 import { Col, Row, Container } from "react-bootstrap";
 import { ArrowRightCircle, ArrowDownCircle } from "react-bootstrap-icons";
+import headerImg from "../assets/img/header-img.png";
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Banner = () => {
   const [loopNum, setLoopNum] = useState(0);
@@ -53,42 +56,64 @@ export const Banner = () => {
       <Container>
         <Row className="align-items-center">
           <Col xs={12} md={6} xl={7}>
-            <span className="tagline">Welcome to my Portfolio</span>
-            <h1>{`Hello ! I am Abdallah! `}</h1>
-            <h1>
-              <span className="wrap">A {text}</span>
-            </h1>
-            <div>
-              <p>
-                I graduated from the Coventry University branch in Egypt in 2023
-                with a Bachelors Degree in Computer Science. The grade I
-                achieved was First Class with Honors. I am a driven and aspiring
-                web developer with a strong passion for crafting innovative and
-                user-centric digital experiences. I am eager to apply my
-                technical proficiency, creative problem-solving skills, and
-                insatiable curiosity to contribute to dynamic web development
-                projects. Committed to staying at the forefront of technological
-                advancements in the field and continuously enhancing my coding
-                expertise to build efficient, visually appealing, and responsive
-                websites. Seeking an opportunity to collaborate with like-minded
-                professionals in a growth-oriented environment where I can
-                leverage my enthusiasm for coding and design to create impactful
-                online solutions.
-              </p>
-            </div>
-            <div className="buttons-container">
-              <button onClick={() => console.log("connect")}>
-                Connect with me! <ArrowRightCircle size={25} />
-              </button>
-              <button>
-                <a href="/Abdallah_Ibrahim_CV.pdf" download={true}>
-                  Download my CV! <ArrowDownCircle size={25} />
-                </a>
-              </button>
-            </div>
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <span className="tagline">Welcome to my Portfolio</span>
+                  <h1>{`Hello ! I am Abdallah! `}</h1>
+                  <h1>
+                    <span className="wrap">A {text}</span>
+                  </h1>
+                  <div>
+                    <p>
+                      I graduated from the Coventry University branch in Egypt
+                      in 2023 with a Bachelors Degree in Computer Science. The
+                      grade I achieved was First Class with Honors. I am a
+                      driven and aspiring web developer with a strong passion
+                      for crafting innovative and user-centric digital
+                      experiences. I am eager to apply my technical proficiency,
+                      creative problem-solving skills, and insatiable curiosity
+                      to contribute to dynamic web development projects.
+                      Committed to staying at the forefront of technological
+                      advancements in the field and continuously enhancing my
+                      coding expertise to build efficient, visually appealing,
+                      and responsive websites. Seeking an opportunity to
+                      collaborate with like-minded professionals in a
+                      growth-oriented environment where I can leverage my
+                      enthusiasm for coding and design to create impactful
+                      online solutions.
+                    </p>
+                  </div>
+                  <div className="buttons-container">
+                    <button onClick={() => console.log("connect")}>
+                      Connect with me! <ArrowRightCircle size={25} />
+                    </button>
+                    <button>
+                      <a href="/Abdallah_Ibrahim_CV.pdf" download={true}>
+                        Download my CV! <ArrowDownCircle size={25} />
+                      </a>
+                    </button>
+                  </div>
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
           <Col xs={12} md={6} xl={5}>
-            <img src={""} />
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__zoomIn" : ""
+                  }
+                >
+                  <img src={headerImg} />
+                </div>
+              )}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>

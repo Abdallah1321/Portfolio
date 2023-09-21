@@ -7,6 +7,8 @@ import projImg4 from "../assets/img/fraud.png";
 import projImg5 from "../assets/img/raterestaurants.png";
 import projImg6 from "../assets/img/imdbdata.png";
 import { ExperienceCard } from "./ExperienceCard";
+import 'animate.css';
+import TrackVisibility from 'react-on-screen';
 
 export const Projects = () => {
   const projects = [
@@ -216,7 +218,10 @@ export const Projects = () => {
     <section className="project" id="project">
       <Container>
         <Row>
-          <Col>
+          <Col size={12}>
+          <TrackVisibility>
+              {({ isVisible }) =>
+              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
             <h2>My Resume</h2>
             <p>
               Here you can view the projects I have worked on, my work
@@ -263,6 +268,8 @@ export const Projects = () => {
                 </Tab.Pane>
               </Tab.Content>
             </Tab.Container>
+            </div>}
+            </TrackVisibility>
           </Col>
         </Row>
       </Container>
