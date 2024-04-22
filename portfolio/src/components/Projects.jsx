@@ -7,8 +7,8 @@ import projImg4 from "../assets/img/fraud.png";
 import projImg5 from "../assets/img/raterestaurants.png";
 import projImg6 from "../assets/img/imdbdata.png";
 import { ExperienceCard } from "./ExperienceCard";
-import 'animate.css';
-import TrackVisibility from 'react-on-screen';
+import "animate.css";
+import TrackVisibility from "react-on-screen";
 
 export const Projects = () => {
   const projects = [
@@ -63,6 +63,29 @@ export const Projects = () => {
   ];
 
   const experiences = [
+    {
+      company: "The Sparks Foundation",
+      role: "Web Developer Internship",
+      date: "September 2023 - October 2023",
+      description: (
+        <>
+          <ul>
+            <li>
+              Completed tasks related to web development such as creating a bank
+              system using the MERN stack. This system allowed users to create
+              bank transfers to other customers, view customer details, delete
+              customers from the system and view the transaction history.
+            </li>
+            <li>
+              Worked on developing a web application with payment integration
+              using the PayPal developer APIs. This involved deep research on
+              the documentation of the PayPal API to create a working system
+              which allowed the payments.
+            </li>
+          </ul>
+        </>
+      ),
+    },
     {
       company: "Qcentris",
       role: "Software Test Consultant Intern",
@@ -219,56 +242,65 @@ export const Projects = () => {
       <Container>
         <Row>
           <Col size={12}>
-          <TrackVisibility>
-              {({ isVisible }) =>
-              <div className={isVisible ? "animate__animated animate__fadeIn": ""}>
-            <h2>My Resume</h2>
-            <p>
-              Here you can view the projects I have worked on, my work
-              experience as well as the achievements I have earned throughout my
-              career.
-            </p>
-            <Tab.Container id="projects-tab" defaultActiveKey="first">
-              <Nav
-                variant="pills"
-                className="nav-pills mb-5 justify-content-center align-items-center"
-                id="pills-tab"
-              >
-                <Nav.Item>
-                  <Nav.Link eventKey="first">Projects</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="second">Experience</Nav.Link>
-                </Nav.Item>
-                <Nav.Item>
-                  <Nav.Link eventKey="third">Achievements</Nav.Link>
-                </Nav.Item>
-              </Nav>
-              <Tab.Content>
-                <Tab.Pane eventKey="first">
-                  <Row>
-                    {projects.map((project, index) => {
-                      return <ProjectCard key={index} {...project} />;
-                    })}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="second">
-                  <Row>
-                    {experiences.map((experience, index) => {
-                      return <ExperienceCard key={index} {...experience} />;
-                    })}
-                  </Row>
-                </Tab.Pane>
-                <Tab.Pane eventKey="third">
-                  <Row>
-                    {achievements.map((achievement, index) => {
-                      return <ExperienceCard key={index} {...achievement} />;
-                    })}
-                  </Row>
-                </Tab.Pane>
-              </Tab.Content>
-            </Tab.Container>
-            </div>}
+            <TrackVisibility>
+              {({ isVisible }) => (
+                <div
+                  className={
+                    isVisible ? "animate__animated animate__fadeIn" : ""
+                  }
+                >
+                  <h2>My Resume</h2>
+                  <p>
+                    Here you can view the projects I have worked on, my work
+                    experience as well as the achievements I have earned
+                    throughout my career.
+                  </p>
+                  <Tab.Container id="projects-tab" defaultActiveKey="first">
+                    <Nav
+                      variant="pills"
+                      className="nav-pills mb-5 justify-content-center align-items-center"
+                      id="pills-tab"
+                    >
+                      <Nav.Item>
+                        <Nav.Link eventKey="first">Projects</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="second">Experience</Nav.Link>
+                      </Nav.Item>
+                      <Nav.Item>
+                        <Nav.Link eventKey="third">Achievements</Nav.Link>
+                      </Nav.Item>
+                    </Nav>
+                    <Tab.Content>
+                      <Tab.Pane eventKey="first">
+                        <Row>
+                          {projects.map((project, index) => {
+                            return <ProjectCard key={index} {...project} />;
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="second">
+                        <Row>
+                          {experiences.map((experience, index) => {
+                            return (
+                              <ExperienceCard key={index} {...experience} />
+                            );
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                      <Tab.Pane eventKey="third">
+                        <Row>
+                          {achievements.map((achievement, index) => {
+                            return (
+                              <ExperienceCard key={index} {...achievement} />
+                            );
+                          })}
+                        </Row>
+                      </Tab.Pane>
+                    </Tab.Content>
+                  </Tab.Container>
+                </div>
+              )}
             </TrackVisibility>
           </Col>
         </Row>
